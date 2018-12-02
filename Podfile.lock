@@ -1,0 +1,16 @@
+PODS:
+  - OrzFMod (0.0.1)
+
+DEPENDENCIES:
+  - OrzFMod
+
+SPEC REPOS:
+  https://github.com/OrzGeeker/Specs.git:
+    - OrzFMod
+
+SPEC CHECKSUMS:
+  OrzFMod: 27a8d68c70c9aef9a77ae458b954f38cd0655da5
+
+PODFILE CHECKSUM: db7e18ae1ccc7e69991357bd2400b0c788083233
+
+COCOAPODS: 1.5.3

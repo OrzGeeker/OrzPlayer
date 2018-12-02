@@ -5,11 +5,11 @@ DEPENDENCIES:
   - OrzFMod
 
 SPEC REPOS:
-  https://github.com/OrzGeeker/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - OrzFMod
 
 SPEC CHECKSUMS:
-  OrzFMod: 27a8d68c70c9aef9a77ae458b954f38cd0655da5
+  OrzFMod: 158e23f3b6adb265c7f91a1106ec20f4de4f186e
 
 PODFILE CHECKSUM: db7e18ae1ccc7e69991357bd2400b0c788083233
 

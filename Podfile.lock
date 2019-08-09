@@ -1,16 +1,16 @@
 PODS:
-  - OrzFMod (0.0.1)
+  - OrzFMod (0.0.3)
 
 DEPENDENCIES:
   - OrzFMod
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/OrzGeeker/Specs.git:
     - OrzFMod
 
 SPEC CHECKSUMS:
-  OrzFMod: 158e23f3b6adb265c7f91a1106ec20f4de4f186e
+  OrzFMod: 5646a4564619b9b6a159b443c31380e6a1d1d210
 
 PODFILE CHECKSUM: db7e18ae1ccc7e69991357bd2400b0c788083233
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.5

@@ -16,7 +16,21 @@ class OrzMusicListViewController: UITableViewController {
     let fmodPlayer = OrzPlayer()
     var curPlayItemNavStack: Array<Directory>?
     var navStack = Array<Directory>()
-    var dataSource: Array<Any>?
+    private var dataSourceStore: Array<Any>?
+    var dataSource: Array<Any>? {
+        get {
+            return self.dataSourceStore
+        }
+        
+        set {
+            self.dataSourceStore = newValue?.filter({ (node) -> Bool in
+                if node is File {
+                    return (node as! File).playable
+                }
+                return true
+            })
+        }
+    }
     var report: Report?
     
     @IBOutlet weak var musicListTableView: UITableView!
@@ -156,8 +170,7 @@ class OrzMusicListViewController: UITableViewController {
                 fileCell.textLabel?.text = file.name
                 fileCell.accessoryType = .none
                 fileCell.isUserInteractionEnabled = file.playable
-                fileCell.textLabel?.textColor = file.playable ? .black : .red
-                
+                fileCell.textLabel?.textColor = .black
                 return fileCell
             }
             else if node is Directory {

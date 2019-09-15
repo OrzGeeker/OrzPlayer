@@ -3,16 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		60E2AD8EA0877F4E126046A2 /* Pods_OrzPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A33D8CD9FE0552F3C964088F /* Pods_OrzPlayer.framework */; };
 		F326F8E521AEFDFF00B60098 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F326F8E421AEFDFF00B60098 /* AppDelegate.swift */; };
-		F326F8E721AEFDFF00B60098 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F326F8E621AEFDFF00B60098 /* ViewController.swift */; };
 		F326F8EA21AEFDFF00B60098 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F326F8E821AEFDFF00B60098 /* Main.storyboard */; };
 		F326F8EC21AEFE0000B60098 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F326F8EB21AEFE0000B60098 /* Assets.xcassets */; };
 		F326F8EF21AEFE0000B60098 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F326F8ED21AEFE0000B60098 /* LaunchScreen.storyboard */; };
+		F3D259DE232DF7A4008EC063 /* OrzMusicServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D259DA232DF7A3008EC063 /* OrzMusicServices.swift */; };
+		F3D259DF232DF7A4008EC063 /* OrzMusicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D259DB232DF7A3008EC063 /* OrzMusicListViewController.swift */; };
+		F3D259E0232DF7A4008EC063 /* OrzPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D259DC232DF7A3008EC063 /* OrzPlayer.swift */; };
+		F3D259E1232DF7A4008EC063 /* OrzMusicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D259DD232DF7A3008EC063 /* OrzMusicModel.swift */; };
+		F3D259E3232E0CAD008EC063 /* OrzAlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D259E2232E0CAC008EC063 /* OrzAlertManager.swift */; };
+		F3D259E5232E0F67008EC063 /* OrzAlertManager+music.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D259E4232E0F67008EC063 /* OrzAlertManager+music.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,11 +25,16 @@
 		A33D8CD9FE0552F3C964088F /* Pods_OrzPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrzPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F326F8E121AEFDFF00B60098 /* OrzPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrzPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F326F8E421AEFDFF00B60098 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F326F8E621AEFDFF00B60098 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F326F8E921AEFDFF00B60098 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F326F8EB21AEFE0000B60098 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F326F8EE21AEFE0000B60098 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F326F8F021AEFE0000B60098 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3D259DA232DF7A3008EC063 /* OrzMusicServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrzMusicServices.swift; sourceTree = "<group>"; };
+		F3D259DB232DF7A3008EC063 /* OrzMusicListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrzMusicListViewController.swift; sourceTree = "<group>"; };
+		F3D259DC232DF7A3008EC063 /* OrzPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrzPlayer.swift; sourceTree = "<group>"; };
+		F3D259DD232DF7A3008EC063 /* OrzMusicModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrzMusicModel.swift; sourceTree = "<group>"; };
+		F3D259E2232E0CAC008EC063 /* OrzAlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrzAlertManager.swift; sourceTree = "<group>"; };
+		F3D259E4232E0F67008EC063 /* OrzAlertManager+music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrzAlertManager+music.swift"; sourceTree = "<group>"; };
 		FFDBA4275E2F947D15A52EAA /* Pods-OrzPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrzPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OrzPlayer/Pods-OrzPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,14 +88,27 @@
 		F326F8E321AEFDFF00B60098 /* OrzPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				F346F773232DF5090095AFDC /* Core */,
 				F326F8E421AEFDFF00B60098 /* AppDelegate.swift */,
-				F326F8E621AEFDFF00B60098 /* ViewController.swift */,
 				F326F8E821AEFDFF00B60098 /* Main.storyboard */,
 				F326F8EB21AEFE0000B60098 /* Assets.xcassets */,
 				F326F8ED21AEFE0000B60098 /* LaunchScreen.storyboard */,
 				F326F8F021AEFE0000B60098 /* Info.plist */,
 			);
 			path = OrzPlayer;
+			sourceTree = "<group>";
+		};
+		F346F773232DF5090095AFDC /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F3D259DA232DF7A3008EC063 /* OrzMusicServices.swift */,
+				F3D259DB232DF7A3008EC063 /* OrzMusicListViewController.swift */,
+				F3D259DD232DF7A3008EC063 /* OrzMusicModel.swift */,
+				F3D259DC232DF7A3008EC063 /* OrzPlayer.swift */,
+				F3D259E2232E0CAC008EC063 /* OrzAlertManager.swift */,
+				F3D259E4232E0F67008EC063 /* OrzAlertManager+music.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +145,7 @@
 				TargetAttributes = {
 					F326F8E021AEFDFF00B60098 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1100;
 					};
 				};
 			};
@@ -180,17 +204,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-OrzPlayer/Pods-OrzPlayer-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/OrzFMod/OrzFMod.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrzPlayer/Pods-OrzPlayer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OrzFMod.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrzPlayer/Pods-OrzPlayer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OrzPlayer/Pods-OrzPlayer-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrzPlayer/Pods-OrzPlayer-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -200,8 +223,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F326F8E721AEFDFF00B60098 /* ViewController.swift in Sources */,
+				F3D259E5232E0F67008EC063 /* OrzAlertManager+music.swift in Sources */,
+				F3D259E3232E0CAD008EC063 /* OrzAlertManager.swift in Sources */,
+				F3D259DE232DF7A4008EC063 /* OrzMusicServices.swift in Sources */,
 				F326F8E521AEFDFF00B60098 /* AppDelegate.swift in Sources */,
+				F3D259E1232DF7A4008EC063 /* OrzMusicModel.swift in Sources */,
+				F3D259E0232DF7A4008EC063 /* OrzPlayer.swift in Sources */,
+				F3D259DF232DF7A4008EC063 /* OrzMusicListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,7 +385,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.joker.OrzPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -376,7 +404,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.joker.OrzPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

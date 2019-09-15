@@ -1,4 +1,4 @@
-source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/cocoapods/Specs.git'
 source 'https://github.com/OrzGeeker/Specs.git'
 
 # Uncomment the next line to define a global platform for your project
@@ -10,4 +10,10 @@ target 'OrzPlayer' do
 
   # Pods for OrzPlayer
   pod 'OrzFMod'
+  
+  pod 'Alamofire'
+  
+  pod 'RxSwift'
+  
+  pod 'SwiftyJSON'
 end

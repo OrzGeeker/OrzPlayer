@@ -1,16 +1,29 @@
 PODS:
-  - OrzFMod (0.0.1)
+  - Alamofire (4.9.0)
+  - OrzFMod (0.0.3)
+  - RxSwift (5.0.0)
+  - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
+  - Alamofire
   - OrzFMod
+  - RxSwift
+  - SwiftyJSON
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - RxSwift
+    - SwiftyJSON
+  https://github.com/OrzGeeker/Specs.git:
     - OrzFMod
 
 SPEC CHECKSUMS:
-  OrzFMod: 158e23f3b6adb265c7f91a1106ec20f4de4f186e
+  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  OrzFMod: 5646a4564619b9b6a159b443c31380e6a1d1d210
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: db7e18ae1ccc7e69991357bd2400b0c788083233
+PODFILE CHECKSUM: 9bd8fde51ba75529aa4a41b87442b16eb2dd05b9
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.0.beta.1

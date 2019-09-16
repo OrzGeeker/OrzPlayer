@@ -15,6 +15,7 @@ class OrzMusicListViewController: UITableViewController {
     
     let fmodPlayer = OrzPlayer()
     var curPlayItemNavStack: Array<Directory>?
+    var curPlayItem: File?
     var navStack = Array<Directory>()
     private var dataSourceStore: Array<Any>?
     var dataSource: Array<Any>? {
@@ -116,7 +117,7 @@ class OrzMusicListViewController: UITableViewController {
         }
     }
     
-    @IBAction func location(_ sender: Any) {
+    @IBAction func play(_ sender: Any) {
         
         if let curPlayItemNavStack = self.curPlayItemNavStack,
             fmodPlayer.playing {
@@ -124,6 +125,7 @@ class OrzMusicListViewController: UITableViewController {
             self.dataSource = self.navStack.last?.contents
             self.musicListTableView.reloadData()
         }
+        fmodPlayer.play()
     }
     @IBAction func backward(_ sender: Any) {
         
@@ -135,6 +137,11 @@ class OrzMusicListViewController: UITableViewController {
         }
     }
     
+    @IBAction func pause(_ sender: UIBarButtonItem) {
+        if fmodPlayer.playing {
+            fmodPlayer.pause()
+        }
+    }
     //MARK: UITableViewDataSource
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -166,7 +173,11 @@ class OrzMusicListViewController: UITableViewController {
                 let fileCell = tableView.dequeueReusableCell(withIdentifier: "fileCell", for: indexPath)
                 
                 let file = node as! File
-                
+                if let curPlayItem = self.curPlayItem, file == curPlayItem {
+                    fileCell.backgroundColor = .gray
+                } else {
+                    fileCell.backgroundColor = .white
+                }
                 fileCell.textLabel?.text = file.name
                 fileCell.accessoryType = .none
                 fileCell.isUserInteractionEnabled = file.playable
@@ -196,11 +207,11 @@ class OrzMusicListViewController: UITableViewController {
         if let node = dataSource?[indexPath.row] {
             
             if node is File {
-                
                 if let fileName = (node as! File).name {
                     let fileFullPath = filePath() + fileName;
                     let fileURL = try! OrzMusicRouter.GetMusic(filePath: fileFullPath).asURLRequest().url?.absoluteString
                     self.curPlayItemNavStack = self.navStack
+                    self.curPlayItem = node as? File
                     playStreamRemote(resURL: fileURL)
                 }
                 

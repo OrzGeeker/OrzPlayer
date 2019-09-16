@@ -101,7 +101,7 @@ struct Report {
     }
 }
 
-struct File {
+struct File: Equatable {
     var name: String?
     var playable: Bool = true
     
@@ -114,5 +114,9 @@ struct File {
                 playable = !Music.unPlayableFormat.contains(String(fileExt))
             }
         }
+    }
+    
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.name == rhs.name && lhs.playable == rhs.playable
     }
 }

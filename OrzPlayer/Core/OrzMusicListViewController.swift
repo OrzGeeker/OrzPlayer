@@ -203,9 +203,7 @@ class OrzMusicListViewController: UITableViewController {
     //MARK: UITableViewDelegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let cell = tableView.cellForRow(at: indexPath)
         if let node = dataSource?[indexPath.row] {
-            
             if node is File {
                 if let fileName = (node as! File).name {
                     let fileFullPath = filePath() + fileName;
@@ -213,8 +211,6 @@ class OrzMusicListViewController: UITableViewController {
                     self.curPlayItemNavStack = self.navStack
                     self.curPlayItem = node as? File
                     playStreamRemote(resURL: fileURL)
-                    
-                    cell?.backgroundColor = .gray
                 }
                 
             }
@@ -223,7 +219,6 @@ class OrzMusicListViewController: UITableViewController {
                 self.dataSource = dir.contents
                 self.navStack.append(dir)
                 self.musicListTableView.reloadData()
-                cell?.backgroundColor = .white
             }
         }
     }

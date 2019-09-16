@@ -203,6 +203,9 @@ class OrzMusicListViewController: UITableViewController {
     //MARK: UITableViewDelegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        _ = tableView.visibleCells.map { (cell) in
+            cell.backgroundColor = .white
+        }
         if let node = dataSource?[indexPath.row] {
             if node is File {
                 if let fileName = (node as! File).name {

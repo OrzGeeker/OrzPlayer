@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "orzfmod",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/OrzGeeker/OrzFMod.git",
+      "state" : {
+        "revision" : "ae5f42799294c7bb886f02516dae787b793e488b",
+        "version" : "0.0.1"
+      }
+    }
+  ],
+  "version" : 2
+}

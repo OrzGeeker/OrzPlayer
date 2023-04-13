@@ -1,3 +1,6 @@
 [submodule "OrzFMod"]
 	path = OrzFMod
 	url = https://github.com/OrzGeeker/OrzFMod.git
+[submodule "Service"]
+	path = Service
+	url = https://github.com/OrzGeeker/OrzKeyGenMusicService.git

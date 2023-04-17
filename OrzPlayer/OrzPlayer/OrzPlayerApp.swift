@@ -6,17 +6,13 @@
 //
 
 import SwiftUI
-import FModAPI
 
 @main
 struct OrzPlayerApp: App {
-    let player = FModCapsule()
     var body: some Scene {
         WindowGroup {
             MusicList()
-                .onAppear {
-                    player.playDemoMusic()
-                }
+                .environmentObject(MusicStore())
         }
     }
 }

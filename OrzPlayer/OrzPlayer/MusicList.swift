@@ -8,10 +8,18 @@
 import SwiftUI
 
 struct MusicList: View {
+    
+    @EnvironmentObject var store: MusicStore
+    
     var body: some View {
-        NavigationView {
-            List(1..<20) { itme in
-                MusicItem()
+        NavigationStack {
+            List {
+                ForEach(store.musicItems) { item in
+                    MusicItem(
+                        name: item.name ?? "",
+                        detail: item.type.rawValue,
+                        disclosure: nil)
+                }
             }
             .navigationBarTitle("OrzPlayer")
         }

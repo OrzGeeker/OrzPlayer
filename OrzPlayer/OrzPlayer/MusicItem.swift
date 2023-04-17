@@ -8,19 +8,24 @@
 import SwiftUI
 
 struct MusicItem: View {
+    let name: String
+    let detail: String
+    let disclosure: String?
     var body: some View {
         HStack {
-            Image(systemName: "play.fill")
-                .resizable()
-                .scaledToFit()
-                .frame(height: 50)
-                .padding(.vertical, 10)
-            
-            Text("Music Title")
-                .fontWeight(.bold)
-                .font(.title)
-            
+            VStack(alignment: .leading) {
+                Text(name)
+                    .fontWeight(.bold)
+                    .font(.title)
+                Text(detail)
+            }
             Spacer()
+            HStack {
+                if let disclosure = disclosure {
+                    Text(disclosure)
+                }
+                Image(systemName: "chevron.right")
+            }
         }
 
         
@@ -29,6 +34,7 @@ struct MusicItem: View {
 
 struct MusicItem_Previews: PreviewProvider {
     static var previews: some View {
-        MusicItem()
+        MusicItem(name: "Music Name", detail: "Detail", disclosure: "Disclosure")
+            .padding()
     }
 }

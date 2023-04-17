@@ -14,6 +14,7 @@
 		F312F2E926A33A6900F51DBE /* MusicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F312F2E826A33A6900F51DBE /* MusicItem.swift */; };
 		F312F2EB26A33B7400F51DBE /* MusicStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F312F2EA26A33B7400F51DBE /* MusicStore.swift */; };
 		F320E71A29E873290057ED52 /* FModAPI in Frameworks */ = {isa = PBXBuildFile; productRef = F320E71929E873290057ED52 /* FModAPI */; };
+		F38F4FBB29EDA2EF00A7DED8 /* music.json in Resources */ = {isa = PBXBuildFile; fileRef = F38F4FBA29EDA2EF00A7DED8 /* music.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		F312F2E626A3383900F51DBE /* MusicList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicList.swift; sourceTree = "<group>"; };
 		F312F2E826A33A6900F51DBE /* MusicItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicItem.swift; sourceTree = "<group>"; };
 		F312F2EA26A33B7400F51DBE /* MusicStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicStore.swift; sourceTree = "<group>"; };
+		F38F4FBA29EDA2EF00A7DED8 /* music.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = music.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				2BE687C329E699470013237F /* Info.plist */,
+				F38F4FBA29EDA2EF00A7DED8 /* music.json */,
 				F312F2D626A3363800F51DBE /* OrzPlayerApp.swift */,
 				F312F2E626A3383900F51DBE /* MusicList.swift */,
 				F312F2E826A33A6900F51DBE /* MusicItem.swift */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F312F2DE26A3363900F51DBE /* Preview Assets.xcassets in Resources */,
+				F38F4FBB29EDA2EF00A7DED8 /* music.json in Resources */,
 				F312F2DB26A3363900F51DBE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +301,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -331,6 +336,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

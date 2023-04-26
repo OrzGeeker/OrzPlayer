@@ -12,22 +12,24 @@ struct MusicList: View {
     @EnvironmentObject var store: MusicStore
     
     var body: some View {
-        NavigationStack {
-            List {
-                ForEach(store.musicItems) { item in
+        VStack {
+            if let root = store.musicRootItem {
+                OutlineGroup(root, children: \.contents) { item in
                     MusicItem(
                         name: item.name ?? "",
                         detail: item.type.rawValue,
                         disclosure: nil)
                 }
+                .navigationBarTitle("OrzPlayer")
             }
-            .navigationBarTitle("OrzPlayer")
         }
+        .padding(.horizontal)
     }
 }
 
 struct MusicListView_Previews: PreviewProvider {
     static var previews: some View {
         MusicList()
+            .environmentObject(MusicStore())
     }
 }

@@ -34,7 +34,9 @@ struct MusicItem: View {
 
 struct MusicItem_Previews: PreviewProvider {
     static var previews: some View {
-        MusicItem(name: "Music Name", detail: "Detail", disclosure: "Disclosure")
-            .padding()
+        MusicItem(
+            name: "Music Name",
+            detail: "Detail",
+            disclosure: "Disclosure").padding()
     }
 }

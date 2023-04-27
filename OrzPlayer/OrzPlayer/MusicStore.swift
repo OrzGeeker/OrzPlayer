@@ -36,23 +36,31 @@ struct MusicInfoNode: Codable {
     
 }
 
-extension MusicInfoNode: Hashable {
-    
-}
-
 extension MusicInfoNode: CustomStringConvertible {
+    
     var description: String {
-        switch type {
-        case .file, .directory:
-            return "\(type): \(name ?? "")"
-        case .report:
-            return "\(type): \(directories ?? 0) dirs, \(files ?? 0) files"
+        
+        var ret = ""
+        
+        if let name = name {
+            ret = name
         }
+        
+        switch type {
+        case .file:
+            break
+        case .directory:
+            ret += "/"
+        case .report:
+            return "\(directories ?? 0) dirs, \(files ?? 0) files"
+        }
+        
+        return ret
     }
 }
 
-extension MusicInfoNode: Identifiable {
-    var id: UUID { UUID() }
+extension MusicInfoNode: Identifiable, Hashable {
+    var id: Self { self }
 }
 
 
@@ -74,6 +82,22 @@ extension MusicInfoNode {
             return ret
         }
         ret = infos
+        return ret
+    }
+    
+    var detail: String {
+        
+        var ret = ""
+        
+        switch type {
+        case .file:
+            break
+        case .directory:
+            ret = "\(contents?.count ?? 0) items"
+        case .report:
+            break
+        }
+        
         return ret
     }
 }

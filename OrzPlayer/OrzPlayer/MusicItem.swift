@@ -16,19 +16,18 @@ struct MusicItem: View {
             VStack(alignment: .leading) {
                 Text(name)
                     .fontWeight(.bold)
-                    .font(.title)
+                    .font(.system(size: 14))
                 Text(detail)
+                    .font(.system(size: 12))
             }
             Spacer()
             HStack {
                 if let disclosure = disclosure {
                     Text(disclosure)
+                    Image(systemName: "chevron.right")
                 }
-                Image(systemName: "chevron.right")
             }
-        }
-
-        
+        }        
     }
 }
 

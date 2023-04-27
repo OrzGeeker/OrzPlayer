@@ -12,18 +12,20 @@ struct MusicList: View {
     @EnvironmentObject var store: MusicStore
     
     var body: some View {
-        VStack {
-            if let root = store.musicRootItem {
-                OutlineGroup(root, children: \.contents) { item in
-                    MusicItem(
-                        name: item.name ?? "",
-                        detail: item.type.rawValue,
-                        disclosure: nil)
+        NavigationStack {
+            ScrollView(.vertical, showsIndicators: false) {
+                if let root = store.musicRootItem {
+                    OutlineGroup(root, children: \.contents) { item in
+                        MusicItem(
+                            name: item.description,
+                            detail: item.detail,
+                            disclosure: nil)
+                    }
                 }
-                .navigationBarTitle("OrzPlayer")
             }
+            .padding()
+            .navigationBarTitle("OrzPlayer")
         }
-        .padding(.horizontal)
     }
 }
 

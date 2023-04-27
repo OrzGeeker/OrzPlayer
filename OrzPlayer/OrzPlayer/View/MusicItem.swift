@@ -21,13 +21,13 @@ struct MusicItem: View {
                     .font(.system(size: 12))
             }
             Spacer()
-            HStack {
-                if let disclosure = disclosure {
+            if let disclosure = disclosure {
+                HStack {
                     Text(disclosure)
                     Image(systemName: "chevron.right")
                 }
             }
-        }        
+        }
     }
 }
 

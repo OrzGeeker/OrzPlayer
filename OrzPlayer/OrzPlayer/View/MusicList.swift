@@ -11,6 +11,8 @@ struct MusicList: View {
     
     @EnvironmentObject var store: MusicStore
     
+    @State var outlineMode = false
+    
     var body: some View {
         VStack {
             HStack {
@@ -25,20 +27,48 @@ struct MusicList: View {
                     .bold()
                     .font(.largeTitle)
             }
-            ScrollView(.vertical, showsIndicators: true) {
-                if let root = store.rootNode {
-                    OutlineGroup(root, children: \.contents) { item in
+            if let root = store.rootNode {
+                if outlineMode {
+                    ScrollView(.vertical, showsIndicators: true) {
+                        OutlineGroup(root, children: \.contents) { item in
+                            MusicItem(
+                                name: item.description,
+                                detail: item.detail,
+                                disclosure: nil)
+                            .onTapGesture {
+                                store.playFileNode(item)
+                            }
+                        }
+                        .padding(.horizontal)
+                    }
+                } else {
+                    List(MusicStore.allMusics) { item in
                         MusicItem(
                             name: item.description,
                             detail: item.detail,
                             disclosure: nil)
+                        .listRowSeparator(.hidden)
                         .onTapGesture {
                             store.playFileNode(item)
                         }
                     }
-                    .padding(.horizontal)
+                    .listStyle(.plain)
                 }
             }
+            else {
+                EmptyView()
+            }
+        }
+        .overlay(alignment: .topTrailing) {
+            Button {
+                outlineMode.toggle()
+            } label: {
+                Image(systemName: outlineMode ? "list.triangle" : "text.alignleft")
+                    .resizable()
+                    .frame(width: 20, height: 20)
+            }
+            .padding([.top], 10)
+            .padding([.trailing], 15)
         }
     }
 }

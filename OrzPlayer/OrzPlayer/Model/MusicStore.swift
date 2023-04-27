@@ -22,6 +22,8 @@ final class MusicStore: ObservableObject {
         
         player.playStream(withFilePath: node.playFilePath)
     }
+    
+    static var allMusics = [MusicInfoNode]()
 }
 
 extension MusicStore {
@@ -95,7 +97,7 @@ extension MusicStore {
             
         } else if filePath.isFilePath {
             
-            parent = MusicInfoNode(
+            let fileNode = MusicInfoNode(
                 type: .file,
                 name: filePath.lastPathComponent,
                 contents: nil,
@@ -103,6 +105,10 @@ extension MusicStore {
                 files: nil,
                 playFilePath: filePath
             )
+            
+            parent = fileNode
+            
+            allMusics.append(fileNode)
         }
     }
 }

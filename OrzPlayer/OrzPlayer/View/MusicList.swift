@@ -13,6 +13,8 @@ struct MusicList: View {
     
     @State var outlineMode = false
     
+    @State private var iconRotateDegress: Double = 0
+    
     var body: some View {
         VStack {
             HStack {
@@ -21,7 +23,9 @@ struct MusicList: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 40)
-                        .cornerRadius(8)
+                        .cornerRadius(20)
+                        .rotationEffect(.degrees(iconRotateDegress))
+                        .animation(.linear(duration: 1).repeatForever(autoreverses: false), value: iconRotateDegress)
                 }
                 Text(Bundle.appName)
                     .bold()

@@ -19,9 +19,11 @@ final class MusicStore: ObservableObject {
         guard node.type == .file else {
             return
         }
-        
-        player.playStream(withFilePath: node.playFilePath)
-        
+        if player.isPlaying(), player.isSame(as: node.playFilePath) {
+            player.stop()
+        } else {
+            player.playStream(withFilePath: node.playFilePath)
+        }
         selectedMusic = node
     }
     

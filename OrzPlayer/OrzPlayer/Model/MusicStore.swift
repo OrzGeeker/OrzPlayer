@@ -7,7 +7,6 @@
 
 import Foundation
 import FModAPI
-import UIKit
 
 final class MusicStore: ObservableObject {
     
@@ -25,15 +24,15 @@ final class MusicStore: ObservableObject {
     }
 }
 
-enum FileSystemError: Error {
-    case documentDirNotExist
-}
-
 extension MusicStore {
     
     static let documentDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
     
     static func walkThroughDocumentDir() throws -> MusicInfoNode {
+        
+        enum FileSystemError: Error {
+            case documentDirNotExist
+        }
         
         guard let documentDir = documentDir
         else {
@@ -106,74 +105,4 @@ extension MusicStore {
             )
         }
     }
-    
-}
-
-extension URL {
-    
-    var isDir: Bool {
-        
-        guard self.isFileURL
-        else {
-            return false
-        }
-        
-        var isDir = ObjCBool(false)
-        
-        let isFileExist = FileManager.default.fileExists(atPath: self.path, isDirectory: &isDir)
-        
-        return isFileExist && isDir.boolValue
-    }
-    
-    var isFile: Bool {
-        
-        guard self.isFileURL
-        else {
-            return false
-        }
-        
-        var isDir = ObjCBool(false)
-        
-        let isFileExist = FileManager.default.fileExists(atPath: self.path, isDirectory: &isDir)
-        
-        return isFileExist && !isDir.boolValue
-    }
-    
-    var path: String { self.path(percentEncoded: false) }
-    
-}
-
-extension String {
-    
-    var isFilePath: Bool { URL(filePath: self).isFile }
-    
-    var isDirPath: Bool { URL(filePath: self).isDir }
-    
-    var lastPathComponent: String { return NSString(string: self).lastPathComponent }
-    
-    func appendingPathComponent(_ path: String) -> String { NSString.path(withComponents: [self, path]) }
-}
-
-
-extension Bundle {
-    
-    static let appName: String = {
-        guard let bundleName = Bundle.main.infoDictionary?["CFBundleName"] as? String else {
-            return ""
-        }
-        return bundleName
-    }()
-    
-    static let appIcon: UIImage? = {
-        guard let bundleIconsDictionary = Bundle.main.infoDictionary?["CFBundleIcons"] as? [String: Any],
-              let primaryIconsDictionary = bundleIconsDictionary["CFBundlePrimaryIcon"] as? [String: Any],
-              let iconFiles = primaryIconsDictionary["CFBundleIconFiles"] as? [Any],
-              let lastIcon = iconFiles.last as? String,
-              let iconImage = UIImage(named: lastIcon)
-        else {
-            return nil
-        }
-        return iconImage
-    }()
-
 }

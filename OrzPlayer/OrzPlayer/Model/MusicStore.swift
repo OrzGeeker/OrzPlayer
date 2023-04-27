@@ -21,9 +21,13 @@ final class MusicStore: ObservableObject {
         }
         
         player.playStream(withFilePath: node.playFilePath)
+        
+        selectedMusic = node
     }
     
     static var allMusics = [MusicInfoNode]()
+    
+    @Published var selectedMusic: MusicInfoNode?
 }
 
 extension MusicStore {
@@ -103,7 +107,8 @@ extension MusicStore {
                 contents: nil,
                 directories: nil,
                 files: nil,
-                playFilePath: filePath
+                playFilePath: filePath,
+                bytes: try FileManager.default.attributesOfItem(atPath: filePath)[FileAttributeKey.size] as? Int64
             )
             
             parent = fileNode

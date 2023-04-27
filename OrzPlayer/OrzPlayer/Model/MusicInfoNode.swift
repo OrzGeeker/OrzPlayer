@@ -29,6 +29,16 @@ struct MusicInfoNode: Codable, Identifiable, Hashable {
     
     var playFilePath: String?
     
+    var bytes: Int64?
+    
+    var kiloBytes: Int64 {
+        guard let bytes = bytes
+        else{
+            return 0
+        }
+        
+        return bytes / 1024
+    }
 }
 
 extension MusicInfoNode: CustomStringConvertible {
@@ -59,7 +69,7 @@ extension MusicInfoNode: CustomStringConvertible {
         
         switch type {
         case .file:
-            break
+            ret = "\(kiloBytes) KB"
         case .directory:
             ret = "\(contents?.count ?? 0) items"
         case .report:

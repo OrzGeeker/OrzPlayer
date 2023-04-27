@@ -11,11 +11,30 @@ struct MusicItem: View {
     let name: String
     let detail: String
     let disclosure: String?
+    
+    var active = false
+    
+    @State private var rotateDegrees: Double = 0
+    @State private var noteColor: Color = .red
+    
     var body: some View {
         HStack {
+            if active {
+                Image(systemName: "music.note.list")
+                    .resizable()
+                    .frame(width: 20, height: 20)
+                    .foregroundColor(noteColor)
+                    .padding([.trailing], 10)
+                    .rotationEffect(.degrees(rotateDegrees))
+                    .animation(.easeInOut(duration: 0.5).repeatForever(), value: rotateDegrees)
+                    .onAppear {
+                        rotateDegrees = 45
+                        noteColor = .green
+                    }
+            }
             VStack(alignment: .leading) {
                 Text(name)
-                    .fontWeight(.bold)
+                    .fontWeight(active ? .bold : .medium)
                     .font(.system(size: 14))
                 Text(detail)
                     .font(.system(size: 12))
@@ -36,6 +55,8 @@ struct MusicItem_Previews: PreviewProvider {
         MusicItem(
             name: "Music Name",
             detail: "Detail",
-            disclosure: "Disclosure").padding()
+            disclosure: "Disclosure",
+            active: true)
+        .padding()
     }
 }

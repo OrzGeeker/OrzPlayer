@@ -34,7 +34,8 @@ struct MusicList: View {
                             MusicItem(
                                 name: item.description,
                                 detail: item.detail,
-                                disclosure: nil)
+                                disclosure: nil,
+                                active: store.selectedMusic?.id == item.id)
                             .onTapGesture {
                                 store.playFileNode(item)
                             }
@@ -46,7 +47,8 @@ struct MusicList: View {
                         MusicItem(
                             name: item.description,
                             detail: item.detail,
-                            disclosure: nil)
+                            disclosure: nil,
+                            active: store.selectedMusic?.id == item.id)
                         .listRowSeparator(.hidden)
                         .onTapGesture {
                             store.playFileNode(item)

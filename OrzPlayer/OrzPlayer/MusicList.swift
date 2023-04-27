@@ -12,19 +12,33 @@ struct MusicList: View {
     @EnvironmentObject var store: MusicStore
     
     var body: some View {
-        NavigationStack {
-            ScrollView(.vertical, showsIndicators: false) {
-                if let root = store.musicRootItem {
+        VStack {
+            HStack {
+                if let uiIconImage = Bundle.appIcon {
+                    Image(uiImage: uiIconImage)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 40)
+                        .cornerRadius(8)
+                }
+                Text(Bundle.appName)
+                    .bold()
+                    .font(.largeTitle)
+            }
+            ScrollView(.vertical, showsIndicators: true) {
+                if let root = store.rootNode {
                     OutlineGroup(root, children: \.contents) { item in
                         MusicItem(
                             name: item.description,
                             detail: item.detail,
                             disclosure: nil)
+                        .onTapGesture {
+                            store.playFileNode(item)
+                        }
                     }
+                    .padding(.horizontal)
                 }
             }
-            .padding()
-            .navigationBarTitle("OrzPlayer")
         }
     }
 }

@@ -11,8 +11,6 @@ import UIKit
 
 final class MusicStore: ObservableObject {
     
-    var mockRootNode: MusicInfoNode? { MusicInfoNode.parseMusics().first { $0.type != .report } }
-    
     private let player = FModCapsule()
     
     let rootNode: MusicInfoNode? = try? MusicStore.walkThroughDocumentDir()
@@ -24,8 +22,11 @@ final class MusicStore: ObservableObject {
         }
         
         player.playStream(withFilePath: node.playFilePath)
-        
     }
+}
+
+enum FileSystemError: Error {
+    case documentDirNotExist
 }
 
 extension MusicStore {
@@ -34,9 +35,14 @@ extension MusicStore {
     
     static func walkThroughDocumentDir() throws -> MusicInfoNode {
         
+        guard let documentDir = documentDir
+        else {
+            throw FileSystemError.documentDirNotExist
+        }
+        
         var root = MusicInfoNode(
             type: .directory,
-            name: "Document",
+            name: documentDir.lastPathComponent,
             contents: nil,
             directories: nil,
             files: nil)

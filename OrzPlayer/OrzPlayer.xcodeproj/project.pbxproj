@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B84ED0C29FA2A2E00D291EB /* MusicInfoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B84ED0B29FA2A2E00D291EB /* MusicInfoNode.swift */; };
+		2BFF26BC29FA66B000FC9A7D /* MusicStore+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF26BB29FA66B000FC9A7D /* MusicStore+Mock.swift */; };
 		F312F2D726A3363800F51DBE /* OrzPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F312F2D626A3363800F51DBE /* OrzPlayerApp.swift */; };
 		F312F2DB26A3363900F51DBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F312F2DA26A3363900F51DBE /* Assets.xcassets */; };
 		F312F2DE26A3363900F51DBE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F312F2DD26A3363900F51DBE /* Preview Assets.xcassets */; };
@@ -20,7 +21,8 @@
 
 /* Begin PBXFileReference section */
 		2B84ED0B29FA2A2E00D291EB /* MusicInfoNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicInfoNode.swift; sourceTree = "<group>"; };
-		2BE687C329E699470013237F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2BE687C329E699470013237F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BFF26BB29FA66B000FC9A7D /* MusicStore+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MusicStore+Mock.swift"; sourceTree = "<group>"; };
 		F312F2D326A3363800F51DBE /* OrzPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrzPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F312F2D626A3363800F51DBE /* OrzPlayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrzPlayerApp.swift; sourceTree = "<group>"; };
 		F312F2DA26A3363900F51DBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -43,6 +45,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BFF26BD29FA66B700FC9A7D /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				F38F4FBA29EDA2EF00A7DED8 /* music.json */,
+				2BFF26BB29FA66B000FC9A7D /* MusicStore+Mock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		2BFF26BE29FA66D500FC9A7D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F312F2EA26A33B7400F51DBE /* MusicStore.swift */,
+				2B84ED0B29FA2A2E00D291EB /* MusicInfoNode.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2BFF26BF29FA66DF00FC9A7D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F312F2E626A3383900F51DBE /* MusicList.swift */,
+				F312F2E826A33A6900F51DBE /* MusicItem.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2BFF26C029FA66FB00FC9A7D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F312F2D626A3363800F51DBE /* OrzPlayerApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		2BFF26C129FA673100FC9A7D /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				2BE687C329E699470013237F /* Info.plist */,
+				F312F2DA26A3363900F51DBE /* Assets.xcassets */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		F312F2CA26A3363800F51DBE = {
 			isa = PBXGroup;
 			children = (
@@ -62,14 +108,11 @@
 		F312F2D526A3363800F51DBE /* OrzPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				2BE687C329E699470013237F /* Info.plist */,
-				F38F4FBA29EDA2EF00A7DED8 /* music.json */,
-				F312F2D626A3363800F51DBE /* OrzPlayerApp.swift */,
-				F312F2E626A3383900F51DBE /* MusicList.swift */,
-				F312F2E826A33A6900F51DBE /* MusicItem.swift */,
-				F312F2EA26A33B7400F51DBE /* MusicStore.swift */,
-				2B84ED0B29FA2A2E00D291EB /* MusicInfoNode.swift */,
-				F312F2DA26A3363900F51DBE /* Assets.xcassets */,
+				2BFF26C029FA66FB00FC9A7D /* App */,
+				2BFF26C129FA673100FC9A7D /* Config */,
+				2BFF26BE29FA66D500FC9A7D /* Model */,
+				2BFF26BF29FA66DF00FC9A7D /* View */,
+				2BFF26BD29FA66B700FC9A7D /* Mock */,
 				F312F2DC26A3363900F51DBE /* Preview Content */,
 			);
 			path = OrzPlayer;
@@ -163,6 +206,7 @@
 				2B84ED0C29FA2A2E00D291EB /* MusicInfoNode.swift in Sources */,
 				F312F2E926A33A6900F51DBE /* MusicItem.swift in Sources */,
 				F312F2EB26A33B7400F51DBE /* MusicStore.swift in Sources */,
+				2BFF26BC29FA66B000FC9A7D /* MusicStore+Mock.swift in Sources */,
 				F312F2E726A3383900F51DBE /* MusicList.swift in Sources */,
 				F312F2D726A3363800F51DBE /* OrzPlayerApp.swift in Sources */,
 			);
@@ -298,7 +342,7 @@
 				DEVELOPMENT_TEAM = 2N62934Y28;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = OrzPlayer/Info.plist;
+				INFOPLIST_FILE = OrzPlayer/Config/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -333,7 +377,7 @@
 				DEVELOPMENT_TEAM = 2N62934Y28;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = OrzPlayer/Info.plist;
+				INFOPLIST_FILE = OrzPlayer/Config/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

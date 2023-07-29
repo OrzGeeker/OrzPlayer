@@ -5,6 +5,7 @@
 ## Build generated
 build/
 DerivedData/
+OrzMusicBundle/
 
 ## Various settings
 *.pbxuser

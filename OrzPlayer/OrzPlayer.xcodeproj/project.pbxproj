@@ -63,8 +63,9 @@
 		F312F2E626A3383900F51DBE /* MusicList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicList.swift; sourceTree = "<group>"; };
 		F312F2E826A33A6900F51DBE /* MusicItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicItem.swift; sourceTree = "<group>"; };
 		F312F2EA26A33B7400F51DBE /* MusicStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicStore.swift; sourceTree = "<group>"; };
-		F33A70B52A75448B00F14566 /* KeyGenMusic */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KeyGenMusic; path = ../KeyGenMusic; sourceTree = "<group>"; };
-		F33A70B82A754DF600F14566 /* gen_music_json.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = gen_music_json.sh; path = ../gen_music_json.sh; sourceTree = "<group>"; };
+		F33A70B52A75448B00F14566 /* KeyGenMusic */ = {isa = PBXFileReference; lastKnownFileType = folder; path = KeyGenMusic; sourceTree = "<group>"; };
+		F33A70B82A754DF600F14566 /* gen_music_json.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = gen_music_json.sh; sourceTree = "<group>"; };
+		F36039A32A76598E00A989BC /* OrzMusicBundle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OrzMusicBundle-Info.plist"; sourceTree = "<group>"; };
 		F37586CB2A74C8AC00486836 /* OrzMusicBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrzMusicBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -138,9 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				F312F2D526A3363800F51DBE /* OrzPlayer */,
+				F36039A42A7659EE00A989BC /* OrzMusicBundle */,
 				F375B2052A74EE5000486836 /* Frameworks */,
-				F33A70B82A754DF600F14566 /* gen_music_json.sh */,
-				F33A70B52A75448B00F14566 /* KeyGenMusic */,
 				F312F2D426A3363800F51DBE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -173,6 +173,16 @@
 				F312F2DD26A3363900F51DBE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F36039A42A7659EE00A989BC /* OrzMusicBundle */ = {
+			isa = PBXGroup;
+			children = (
+				F33A70B82A754DF600F14566 /* gen_music_json.sh */,
+				F33A70B52A75448B00F14566 /* KeyGenMusic */,
+				F36039A32A76598E00A989BC /* OrzMusicBundle-Info.plist */,
+			);
+			path = OrzMusicBundle;
 			sourceTree = "<group>";
 		};
 		F375B2052A74EE5000486836 /* Frameworks */ = {
@@ -514,6 +524,7 @@
 				EXECUTABLE_NAME = "";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "OrzMusicBundle/OrzMusicBundle-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos*]" = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
@@ -538,6 +549,7 @@
 				EXECUTABLE_NAME = "";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "OrzMusicBundle/OrzMusicBundle-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos*]" = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;

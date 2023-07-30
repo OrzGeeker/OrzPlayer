@@ -137,11 +137,11 @@
 		F312F2CA26A3363800F51DBE = {
 			isa = PBXGroup;
 			children = (
+				F312F2D526A3363800F51DBE /* OrzPlayer */,
+				F375B2052A74EE5000486836 /* Frameworks */,
 				F33A70B82A754DF600F14566 /* gen_music_json.sh */,
 				F33A70B52A75448B00F14566 /* KeyGenMusic */,
-				F312F2D526A3363800F51DBE /* OrzPlayer */,
 				F312F2D426A3363800F51DBE /* Products */,
-				F375B2052A74EE5000486836 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

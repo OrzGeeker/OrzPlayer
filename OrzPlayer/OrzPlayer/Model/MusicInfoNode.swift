@@ -48,6 +48,7 @@ struct MusicInfoNode: Codable, Hashable, Identifiable {
         return bytes / 1024
     }
     
+    // MARK: Identifiable 实现不可以做成getter
     var id = UUID()
 
 }

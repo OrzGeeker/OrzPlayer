@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B84ED0C29FA2A2E00D291EB /* MusicInfoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B84ED0B29FA2A2E00D291EB /* MusicInfoNode.swift */; };
-		2BFF26BC29FA66B000FC9A7D /* MusicStore+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF26BB29FA66B000FC9A7D /* MusicStore+Mock.swift */; };
+		2BFF26BC29FA66B000FC9A7D /* MusicStore+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF26BB29FA66B000FC9A7D /* MusicStore+Bundle.swift */; };
 		2BFF26C429FA68CF00FC9A7D /* URL+FileSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF26C329FA68CF00FC9A7D /* URL+FileSystem.swift */; };
 		2BFF26C629FA68D800FC9A7D /* String+FileSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF26C529FA68D800FC9A7D /* String+FileSystem.swift */; };
 		2BFF26C829FA68F200FC9A7D /* Bundle+AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF26C729FA68F200FC9A7D /* Bundle+AppInfo.swift */; };
@@ -20,13 +20,38 @@
 		F312F2E926A33A6900F51DBE /* MusicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F312F2E826A33A6900F51DBE /* MusicItem.swift */; };
 		F312F2EB26A33B7400F51DBE /* MusicStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F312F2EA26A33B7400F51DBE /* MusicStore.swift */; };
 		F320E71A29E873290057ED52 /* FModAPI in Frameworks */ = {isa = PBXBuildFile; productRef = F320E71929E873290057ED52 /* FModAPI */; };
-		F38F4FBB29EDA2EF00A7DED8 /* music.json in Resources */ = {isa = PBXBuildFile; fileRef = F38F4FBA29EDA2EF00A7DED8 /* music.json */; };
+		F33A70B62A75448B00F14566 /* KeyGenMusic in Resources */ = {isa = PBXBuildFile; fileRef = F33A70B52A75448B00F14566 /* KeyGenMusic */; };
+		F375B2062A74EE5000486836 /* OrzMusicBundle.bundle in Embed PlugIns */ = {isa = PBXBuildFile; fileRef = F37586CB2A74C8AC00486836 /* OrzMusicBundle.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F375B2072A74EE5000486836 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F312F2CB26A3363800F51DBE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F37586CA2A74C8AC00486836;
+			remoteInfo = OrzMusicBundle;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F375B2092A74EE5100486836 /* Embed PlugIns */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F375B2062A74EE5000486836 /* OrzMusicBundle.bundle in Embed PlugIns */,
+			);
+			name = "Embed PlugIns";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2B84ED0B29FA2A2E00D291EB /* MusicInfoNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicInfoNode.swift; sourceTree = "<group>"; };
 		2BE687C329E699470013237F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2BFF26BB29FA66B000FC9A7D /* MusicStore+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MusicStore+Mock.swift"; sourceTree = "<group>"; };
+		2BFF26BB29FA66B000FC9A7D /* MusicStore+Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MusicStore+Bundle.swift"; sourceTree = "<group>"; };
 		2BFF26C329FA68CF00FC9A7D /* URL+FileSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+FileSystem.swift"; sourceTree = "<group>"; };
 		2BFF26C529FA68D800FC9A7D /* String+FileSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FileSystem.swift"; sourceTree = "<group>"; };
 		2BFF26C729FA68F200FC9A7D /* Bundle+AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+AppInfo.swift"; sourceTree = "<group>"; };
@@ -38,7 +63,9 @@
 		F312F2E626A3383900F51DBE /* MusicList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicList.swift; sourceTree = "<group>"; };
 		F312F2E826A33A6900F51DBE /* MusicItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicItem.swift; sourceTree = "<group>"; };
 		F312F2EA26A33B7400F51DBE /* MusicStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicStore.swift; sourceTree = "<group>"; };
-		F38F4FBA29EDA2EF00A7DED8 /* music.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = music.json; sourceTree = "<group>"; };
+		F33A70B52A75448B00F14566 /* KeyGenMusic */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KeyGenMusic; path = ../KeyGenMusic; sourceTree = "<group>"; };
+		F33A70B82A754DF600F14566 /* gen_music_json.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = gen_music_json.sh; path = ../gen_music_json.sh; sourceTree = "<group>"; };
+		F37586CB2A74C8AC00486836 /* OrzMusicBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrzMusicBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,22 +77,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F37586C82A74C8AC00486836 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2BFF26BD29FA66B700FC9A7D /* Mock */ = {
-			isa = PBXGroup;
-			children = (
-				F38F4FBA29EDA2EF00A7DED8 /* music.json */,
-				2BFF26BB29FA66B000FC9A7D /* MusicStore+Mock.swift */,
-			);
-			path = Mock;
-			sourceTree = "<group>";
-		};
 		2BFF26BE29FA66D500FC9A7D /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				F312F2EA26A33B7400F51DBE /* MusicStore.swift */,
+				2BFF26BB29FA66B000FC9A7D /* MusicStore+Bundle.swift */,
 				2B84ED0B29FA2A2E00D291EB /* MusicInfoNode.swift */,
 			);
 			path = Model;
@@ -111,8 +137,11 @@
 		F312F2CA26A3363800F51DBE = {
 			isa = PBXGroup;
 			children = (
+				F33A70B82A754DF600F14566 /* gen_music_json.sh */,
+				F33A70B52A75448B00F14566 /* KeyGenMusic */,
 				F312F2D526A3363800F51DBE /* OrzPlayer */,
 				F312F2D426A3363800F51DBE /* Products */,
+				F375B2052A74EE5000486836 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				F312F2D326A3363800F51DBE /* OrzPlayer.app */,
+				F37586CB2A74C8AC00486836 /* OrzMusicBundle.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,7 +162,6 @@
 				2BFF26BE29FA66D500FC9A7D /* Model */,
 				2BFF26BF29FA66DF00FC9A7D /* View */,
 				2BFF26C229FA68B700FC9A7D /* Utils */,
-				2BFF26BD29FA66B700FC9A7D /* Mock */,
 				F312F2DC26A3363900F51DBE /* Preview Content */,
 			);
 			path = OrzPlayer;
@@ -146,6 +175,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		F375B2052A74EE5000486836 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -156,10 +192,12 @@
 				F312F2CF26A3363800F51DBE /* Sources */,
 				F312F2D026A3363800F51DBE /* Frameworks */,
 				F312F2D126A3363800F51DBE /* Resources */,
+				F375B2092A74EE5100486836 /* Embed PlugIns */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F375B2082A74EE5000486836 /* PBXTargetDependency */,
 			);
 			name = OrzPlayer;
 			packageProductDependencies = (
@@ -169,6 +207,23 @@
 			productReference = F312F2D326A3363800F51DBE /* OrzPlayer.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F37586CA2A74C8AC00486836 /* OrzMusicBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F37586CC2A74C8AC00486836 /* Build configuration list for PBXNativeTarget "OrzMusicBundle" */;
+			buildPhases = (
+				F37586C72A74C8AC00486836 /* Sources */,
+				F37586C82A74C8AC00486836 /* Frameworks */,
+				F37586C92A74C8AC00486836 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OrzMusicBundle;
+			productName = OrzMusicBundle;
+			productReference = F37586CB2A74C8AC00486836 /* OrzMusicBundle.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -177,10 +232,13 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					F312F2D226A3363800F51DBE = {
 						CreatedOnToolsVersion = 13.0;
+					};
+					F37586CA2A74C8AC00486836 = {
+						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
@@ -201,6 +259,7 @@
 			projectRoot = "";
 			targets = (
 				F312F2D226A3363800F51DBE /* OrzPlayer */,
+				F37586CA2A74C8AC00486836 /* OrzMusicBundle */,
 			);
 		};
 /* End PBXProject section */
@@ -211,8 +270,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F312F2DE26A3363900F51DBE /* Preview Assets.xcassets in Resources */,
-				F38F4FBB29EDA2EF00A7DED8 /* music.json in Resources */,
 				F312F2DB26A3363900F51DBE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F37586C92A74C8AC00486836 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F33A70B62A75448B00F14566 /* KeyGenMusic in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,23 +296,38 @@
 				F312F2EB26A33B7400F51DBE /* MusicStore.swift in Sources */,
 				2BFF26C829FA68F200FC9A7D /* Bundle+AppInfo.swift in Sources */,
 				2BFF26C429FA68CF00FC9A7D /* URL+FileSystem.swift in Sources */,
-				2BFF26BC29FA66B000FC9A7D /* MusicStore+Mock.swift in Sources */,
+				2BFF26BC29FA66B000FC9A7D /* MusicStore+Bundle.swift in Sources */,
 				F312F2E726A3383900F51DBE /* MusicList.swift in Sources */,
 				F312F2D726A3363800F51DBE /* OrzPlayerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F37586C72A74C8AC00486836 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F375B2082A74EE5000486836 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F37586CA2A74C8AC00486836 /* OrzMusicBundle */;
+			targetProxy = F375B2072A74EE5000486836 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F312F2DF26A3363900F51DBE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -276,6 +357,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -291,12 +373,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5;
 			};
 			name = Debug;
 		};
@@ -304,10 +385,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -337,6 +418,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -346,11 +428,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -385,7 +466,6 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -420,8 +500,51 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F37586CD2A74C8AC00486836 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2N62934Y28;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 16.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joker.OrzMusicBundle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		F37586CE2A74C8AC00486836 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2N62934Y28;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 16.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joker.OrzMusicBundle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -442,6 +565,15 @@
 			buildConfigurations = (
 				F312F2E226A3363900F51DBE /* Debug */,
 				F312F2E326A3363900F51DBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F37586CC2A74C8AC00486836 /* Build configuration list for PBXNativeTarget "OrzMusicBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F37586CD2A74C8AC00486836 /* Debug */,
+				F37586CE2A74C8AC00486836 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

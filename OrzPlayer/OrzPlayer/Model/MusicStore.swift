@@ -12,7 +12,9 @@ final class MusicStore: ObservableObject {
     
     private let player = FModCapsule()
     
-    let rootNode: MusicInfoNode? = try? MusicStore.walkThroughDocumentDir()
+//    let rootNode: MusicInfoNode? = try? MusicStore.walkThroughDocumentDir()
+    
+    let rootNode: MusicInfoNode? = try? MusicStore.walkThroughBundleDir()
     
     func playFileNode(_ node: MusicInfoNode) {
         
@@ -30,6 +32,23 @@ final class MusicStore: ObservableObject {
     static var allMusics = [MusicInfoNode]()
     
     @Published var selectedMusic: MusicInfoNode?
+}
+
+extension MusicStore {
+    
+    static func walkThroughBundleDir() throws -> MusicInfoNode? {
+        
+        guard
+            var root = MusicStore.bundleRootNode,
+            let musicDirRoot = MusicStore.bundleMusicDirRoot
+        else {
+            return nil
+        }
+        
+        try walkThroughFilePath(musicDirRoot, parent: &root)
+        
+        return root
+    }
 }
 
 extension MusicStore {

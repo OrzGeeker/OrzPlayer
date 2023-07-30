@@ -16,8 +16,6 @@ struct MusicItemDetail: View {
     }
 }
 
-struct MusicItemDetail_Previews: PreviewProvider {
-    static var previews: some View {
-        MusicItemDetail(item: MusicInfoNode(type: .file, name: "name"))
-    }
+#Preview("Music Detail") {
+    MusicItemDetail(item: MusicInfoNode(type: .file, name: "name"))
 }

@@ -79,9 +79,7 @@ struct MusicList: View {
     }
 }
 
-struct MusicListView_Previews: PreviewProvider {
-    static var previews: some View {
-        MusicList()
-            .environmentObject(MusicStore())
-    }
+#Preview("Music List") {
+    MusicList()
+        .environmentObject(MusicStore())
 }

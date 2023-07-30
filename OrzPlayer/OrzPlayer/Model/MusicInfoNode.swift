@@ -7,9 +7,7 @@
 
 import Foundation
 
-struct MusicInfoNode: Codable, Identifiable, Hashable {
-    
-    var id = UUID()
+struct MusicInfoNode: Codable, Hashable {
     
     enum NodeType: String, Codable {
         case directory
@@ -39,6 +37,10 @@ struct MusicInfoNode: Codable, Identifiable, Hashable {
         
         return bytes / 1024
     }
+}
+
+extension MusicInfoNode: Identifiable {
+    var id: UUID { return UUID() }
 }
 
 extension MusicInfoNode: CustomStringConvertible {

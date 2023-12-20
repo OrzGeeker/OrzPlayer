@@ -138,3 +138,28 @@ extension MusicStore {
         }
     }
 }
+
+
+extension MusicStore {
+    
+    @discardableResult
+    func fetchMusicList() async throws -> MusicInfoNode? {
+        
+        guard let requestURL = URL(string: "/musics/list", relativeTo: URL(string: "http://127.0.0.1:8080"))
+        else {
+            return nil
+        }
+        
+        
+        let (data, response) = try await URLSession.shared.data(from: requestURL)
+        
+        guard (response as? HTTPURLResponse)?.statusCode == 200
+        else {
+            return nil
+        }
+        
+        let root = try JSONDecoder().decode(MusicInfoNode.self, from: data)
+        
+        return root
+    }
+}

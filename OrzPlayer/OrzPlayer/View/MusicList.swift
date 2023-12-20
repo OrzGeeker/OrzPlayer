@@ -25,7 +25,15 @@ struct MusicList: View {
                         .frame(width: 40)
                         .cornerRadius(20)
                         .rotationEffect(.degrees(iconRotateDegress))
-                        .animation(.linear(duration: 1).repeatForever(autoreverses: false), value: iconRotateDegress)
+                        .animation(
+                            .linear(duration: 5)
+                            .repeatForever(autoreverses: false),
+                            value: iconRotateDegress
+                        )
+                        .padding([.trailing], 5)
+                        .onAppear {
+                            iconRotateDegress = 360
+                        }
                 }
                 Text(Bundle.appName)
                     .bold()

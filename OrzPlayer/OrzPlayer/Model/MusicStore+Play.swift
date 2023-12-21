@@ -17,12 +17,19 @@ extension MusicStore {
         guard node.type == .file else {
             return
         }
-        if MusicStore.player.isPlaying(), MusicStore.player.isSame(as: node.playFilePath) {
+        
+        guard let playFilePath = node.playFilePath,
+              FileManager.default.fileExists(atPath: playFilePath)
+        else {
+            return
+        }
+        
+        if MusicStore.player.isPlaying(), MusicStore.player.isSame(as: playFilePath) {
             MusicStore.player.stop()
         } else {
-            MusicStore.player.playStream(withFilePath: node.playFilePath)
+            MusicStore.player.playStream(withFilePath: playFilePath)
         }
+        
         selectedMusic = node
     }
-
 }

@@ -30,5 +30,38 @@ extension MusicStore {
         } else {
             rootNode = try await fetchKeyGenMusicList()
         }
+        
+        guard let rootNode = rootNode
+        else {
+            return
+        }
+        
+        parseRootNode(rootNode)
     }
+    
+    func parseRootNode(_ node: MusicInfoNode) {
+        
+        guard let contents = node.contents
+        else {
+            return
+        }
+    
+        for var content in contents {
+            switch content.type {
+            case .file:
+                if  let name = content.name,
+                    let playFilePath = MusicStore.documentationDirURL?.appending(path: name).path(percentEncoded: false) {
+                    content.playFilePath = playFilePath
+                }
+                allMusics.append(content)
+            case .directory:
+                parseRootNode(content)
+            case .report:
+                allMusics.append(content)
+            }
+        }
+    }
+    
+    static let documentationDirURL: URL? = try? FileManager.default.url(for: .documentationDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+    
 }

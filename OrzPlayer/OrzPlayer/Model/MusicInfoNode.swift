@@ -8,6 +8,23 @@
 import Foundation
 
 struct MusicInfoNode: Codable, Hashable, Identifiable {
+        
+    let type: NodeType
+    
+    let name: String?
+    
+    var contents: [MusicInfoNode]?
+    
+    var directories: Int?
+    
+    var files: Int?
+    
+    var playFilePath: String?
+    
+    var bytes: Int64?
+    
+    // MARK: Identifiable 实现不可以做成getter
+    let id = UUID()
     
     enum CodingKeys: String, CodingKey {
         case type
@@ -24,22 +41,12 @@ struct MusicInfoNode: Codable, Hashable, Identifiable {
         case file
         case report
     }
-    
-    let type: NodeType
-    
-    let name: String?
-    
-    var contents: [MusicInfoNode]?
-    
-    var directories: Int?
-    
-    var files: Int?
-    
-    var playFilePath: String?
-    
-    var bytes: Int64?
+}
+
+extension MusicInfoNode {
     
     var kiloBytes: Int64 {
+        
         guard let bytes = bytes
         else{
             return 0
@@ -47,10 +54,10 @@ struct MusicInfoNode: Codable, Hashable, Identifiable {
         
         return bytes / 1024
     }
-    
-    // MARK: Identifiable 实现不可以做成getter
-    let id = UUID()
-
+     
+    var megaBytes: Int64 {
+        return kiloBytes / 1024
+    }
 }
 
 extension MusicInfoNode: CustomStringConvertible {
@@ -60,7 +67,7 @@ extension MusicInfoNode: CustomStringConvertible {
         var ret = ""
         
         if let name = name {
-            ret = name
+            ret = name.lastPathComponent
         }
         
         switch type {

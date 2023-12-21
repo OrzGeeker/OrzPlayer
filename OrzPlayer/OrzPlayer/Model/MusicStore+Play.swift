@@ -11,23 +11,19 @@ import FModAPI
 extension MusicStore {
     
     private static let player = FModCapsule()
-    
+        
     func playFileNode(_ node: MusicInfoNode) {
         
-        guard node.type == .file else {
-            return
-        }
-        
-        guard let playFilePath = node.playFilePath,
-              FileManager.default.fileExists(atPath: playFilePath)
+        guard node.type == .file,
+              node.downloaded
         else {
             return
         }
-        
-        if MusicStore.player.isPlaying(), MusicStore.player.isSame(as: playFilePath) {
+
+        if MusicStore.player.isPlaying(), MusicStore.player.isSame(as: node.playFilePath) {
             MusicStore.player.stop()
         } else {
-            MusicStore.player.playStream(withFilePath: playFilePath)
+            MusicStore.player.playStream(withFilePath: node.playFilePath)
         }
         
         selectedMusic = node

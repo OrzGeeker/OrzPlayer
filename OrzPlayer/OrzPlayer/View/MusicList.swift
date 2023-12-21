@@ -49,7 +49,17 @@ struct MusicList: View {
                                 disclosure: nil,
                                 active: store.selectedMusic?.id == item.id)
                             .onTapGesture {
-                                store.playFileNode(item)
+                                if item.downloaded {
+                                    store.playFileNode(item)
+                                } else {
+                                    Task {
+                                        do {
+                                            let ret = try await store.fetchPlayFile(with: item)
+                                        } catch {
+                                            
+                                        }
+                                    }
+                                }
                             }
                         }
                         .padding(.horizontal)
@@ -63,6 +73,7 @@ struct MusicList: View {
                             active: store.selectedMusic?.id == item.id)
                         .listRowSeparator(.hidden)
                         .onTapGesture {
+                            
                             store.playFileNode(item)
                         }
                     }

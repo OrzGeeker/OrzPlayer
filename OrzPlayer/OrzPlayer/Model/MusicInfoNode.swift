@@ -58,6 +58,17 @@ extension MusicInfoNode {
     var megaBytes: Int64 {
         return kiloBytes / 1024
     }
+    
+    var downloaded: Bool {
+        
+        guard let playFilePath,
+              FileManager.default.fileExists(atPath: playFilePath)
+        else {
+            return false
+        }
+        
+        return true
+    }
 }
 
 extension MusicInfoNode: CustomStringConvertible {

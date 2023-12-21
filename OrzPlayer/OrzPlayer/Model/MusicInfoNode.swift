@@ -9,14 +9,14 @@ import Foundation
 
 struct MusicInfoNode: Codable, Hashable, Identifiable {
     
-    enum CodingKeys: CodingKey {
+    enum CodingKeys: String, CodingKey {
         case type
         case name
         case contents
         case directories
         case files
         case playFilePath
-        case bytes
+        case bytes = "size"
     }
     
     enum NodeType: String, Codable {

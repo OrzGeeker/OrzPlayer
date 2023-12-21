@@ -142,8 +142,7 @@ extension MusicStore {
 
 extension MusicStore {
     
-    @discardableResult
-    func fetchMusicList() async throws -> MusicInfoNode? {
+    func fetchKeyGenMusicList() async throws -> MusicInfoNode? {
         
         guard let requestURL = URL(string: "/musics/list", relativeTo: URL(string: "http://127.0.0.1:8080"))
         else {
@@ -158,8 +157,7 @@ extension MusicStore {
             return nil
         }
         
-        let root = try JSONDecoder().decode(MusicInfoNode.self, from: data)
-        
+        let root = try JSONDecoder().decode([MusicInfoNode].self, from: data).first
         return root
     }
 }

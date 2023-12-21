@@ -85,7 +85,7 @@ struct MusicList: View {
             .padding([.trailing], 15)
         }
         .task {
-            try? await store.fetchMusicList()
+            try? await store.fetchKeyGenMusicList()
         }
     }
 }

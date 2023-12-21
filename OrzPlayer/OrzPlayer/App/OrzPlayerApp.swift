@@ -12,7 +12,7 @@ struct OrzPlayerApp: App {
     var body: some Scene {
         WindowGroup {
             MusicList()
-                .environmentObject(MusicStore())
+                .environment(MusicStore())
         }
     }
 }

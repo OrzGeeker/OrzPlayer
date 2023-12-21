@@ -8,156 +8,27 @@
 import Foundation
 import FModAPI
 
-final class MusicStore: ObservableObject {
-    
-    private let player = FModCapsule()
+@Observable
+final class MusicStore {
     
 //    let rootNode: MusicInfoNode? = try? MusicStore.walkThroughDocumentDir()
     
-    let rootNode: MusicInfoNode? = try? MusicStore.walkThroughBundleDir()
+    let useLocal = false
     
-    func playFileNode(_ node: MusicInfoNode) {
-        
-        guard node.type == .file else {
-            return
-        }
-        if player.isPlaying(), player.isSame(as: node.playFilePath) {
-            player.stop()
+    var rootNode: MusicInfoNode?
+    
+    var allMusics = [MusicInfoNode]()
+    
+    var selectedMusic: MusicInfoNode?
+}
+
+extension MusicStore {
+    
+    func loadRootNode() async throws {
+        if useLocal {
+            rootNode = try walkThroughBundleDir()
         } else {
-            player.playStream(withFilePath: node.playFilePath)
+            rootNode = try await fetchKeyGenMusicList()
         }
-        selectedMusic = node
-    }
-    
-    static var allMusics = [MusicInfoNode]()
-    
-    @Published var selectedMusic: MusicInfoNode?
-}
-
-extension MusicStore {
-    
-    static func walkThroughBundleDir() throws -> MusicInfoNode? {
-        
-        guard
-            var root = MusicStore.bundleRootNode,
-            let musicDirRoot = MusicStore.bundleMusicDirRoot
-        else {
-            return nil
-        }
-        
-        try walkThroughFilePath(musicDirRoot, parent: &root)
-        
-        return root
-    }
-}
-
-extension MusicStore {
-    
-    static let documentDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
-    
-    static func walkThroughDocumentDir() throws -> MusicInfoNode {
-        
-        enum FileSystemError: Error {
-            case documentDirNotExist
-        }
-        
-        guard let documentDir = documentDir
-        else {
-            throw FileSystemError.documentDirNotExist
-        }
-        
-        var root = MusicInfoNode(
-            type: .directory,
-            name: documentDir.lastPathComponent,
-            contents: nil,
-            directories: nil,
-            files: nil)
-        
-        try walkThroughFilePath(documentDir, parent: &root)
-        
-        return root
-    }
-    
-    static func walkThroughFilePath(_ filePath: String?, parent: inout MusicInfoNode) throws {
-        
-        guard let filePath = filePath else {
-            return
-        }
-        
-        if filePath.isDirPath {
-            
-            var parentFileCount = 0
-            var parentDirCount = 0
-            var parentContents = [MusicInfoNode]()
-            
-            for item in try FileManager.default.contentsOfDirectory(atPath: filePath) {
-                
-                let newFilePath = filePath.appendingPathComponent(item)
-                
-                var nodeType: MusicInfoNode.NodeType = .directory
-                
-                if newFilePath.isDirPath {
-                    parentDirCount += 1
-                    nodeType = .directory
-                } else if newFilePath.isFilePath {
-                    parentFileCount += 1
-                    nodeType = .file
-                }
-                
-                var node = MusicInfoNode(
-                    type: nodeType,
-                    name: item,
-                    contents: nil,
-                    directories: nil,
-                    files: nil)
-                
-                try walkThroughFilePath(newFilePath, parent: &node)
-                
-                parentContents.append(node)
-            }
-            
-            parent.files = parentFileCount
-            parent.directories = parentDirCount
-            parent.contents = parentContents
-            
-        } else if filePath.isFilePath {
-            
-            let fileNode = MusicInfoNode(
-                type: .file,
-                name: filePath.lastPathComponent,
-                contents: nil,
-                directories: nil,
-                files: nil,
-                playFilePath: filePath,
-                bytes: try FileManager.default.attributesOfItem(atPath: filePath)[FileAttributeKey.size] as? Int64
-            )
-            
-            parent = fileNode
-            
-            allMusics.append(fileNode)
-        }
-    }
-}
-
-
-extension MusicStore {
-    
-    func fetchKeyGenMusicList() async throws -> MusicInfoNode? {
-        
-        guard let requestURL = URL(string: "/musics/list", relativeTo: URL(string: "http://127.0.0.1:8080"))
-        else {
-            return nil
-        }
-        
-        
-        let (data, response) = try await URLSession.shared.data(from: requestURL)
-        
-        guard (response as? HTTPURLResponse)?.statusCode == 200
-        else {
-            return nil
-        }
-        
-        let root = try JSONDecoder().decode([MusicInfoNode].self, from: data).first
-        return root
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MusicList: View {
     
-    @EnvironmentObject var store: MusicStore
+    @Environment(MusicStore.self) var store
     
     @State var outlineMode = false
     
@@ -55,7 +55,7 @@ struct MusicList: View {
                         .padding(.horizontal)
                     }
                 } else {
-                    List(MusicStore.allMusics) { item in
+                    List(store.allMusics) { item in
                         MusicItem(
                             name: item.description,
                             detail: item.detail,
@@ -72,25 +72,32 @@ struct MusicList: View {
             else {
                 EmptyView()
             }
+            Spacer()
         }
         .overlay(alignment: .topTrailing) {
-            Button {
-                outlineMode.toggle()
-            } label: {
-                Image(systemName: outlineMode ? "list.triangle" : "text.alignleft")
-                    .resizable()
-                    .frame(width: 20, height: 20)
+            if !store.allMusics.isEmpty {
+                Button {
+                    outlineMode.toggle()
+                } label: {
+                    Image(systemName: outlineMode ? "list.triangle" : "text.alignleft")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                }
+                .padding([.top], 10)
+                .padding([.trailing], 15)
             }
-            .padding([.top], 10)
-            .padding([.trailing], 15)
         }
         .task {
-            try? await store.fetchKeyGenMusicList()
+            do {
+                try await store.loadRootNode()
+            } catch {
+                print(error.localizedDescription)
+            }
         }
     }
 }
 
 #Preview("Music List") {
     MusicList()
-        .environmentObject(MusicStore())
+        .environment(MusicStore())
 }

@@ -49,7 +49,7 @@ struct MusicInfoNode: Codable, Hashable, Identifiable {
     }
     
     // MARK: Identifiable 实现不可以做成getter
-    var id = UUID()
+    let id = UUID()
 
 }
 

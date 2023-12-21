@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2B84ED0C29FA2A2E00D291EB /* MusicInfoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B84ED0B29FA2A2E00D291EB /* MusicInfoNode.swift */; };
+		2BDBE7F62B34047400FBB73C /* MusicStore+Local.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDBE7F52B34047400FBB73C /* MusicStore+Local.swift */; };
+		2BDBE7F82B34047D00FBB73C /* MusicStore+Remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDBE7F72B34047D00FBB73C /* MusicStore+Remote.swift */; };
+		2BDBE7FA2B3404C700FBB73C /* MusicStore+Play.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDBE7F92B3404C700FBB73C /* MusicStore+Play.swift */; };
 		2BFF26BC29FA66B000FC9A7D /* MusicStore+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF26BB29FA66B000FC9A7D /* MusicStore+Bundle.swift */; };
 		2BFF26C429FA68CF00FC9A7D /* URL+FileSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF26C329FA68CF00FC9A7D /* URL+FileSystem.swift */; };
 		2BFF26C629FA68D800FC9A7D /* String+FileSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF26C529FA68D800FC9A7D /* String+FileSystem.swift */; };
@@ -50,6 +53,9 @@
 
 /* Begin PBXFileReference section */
 		2B84ED0B29FA2A2E00D291EB /* MusicInfoNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicInfoNode.swift; sourceTree = "<group>"; };
+		2BDBE7F52B34047400FBB73C /* MusicStore+Local.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MusicStore+Local.swift"; sourceTree = "<group>"; };
+		2BDBE7F72B34047D00FBB73C /* MusicStore+Remote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MusicStore+Remote.swift"; sourceTree = "<group>"; };
+		2BDBE7F92B3404C700FBB73C /* MusicStore+Play.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MusicStore+Play.swift"; sourceTree = "<group>"; };
 		2BE687C329E699470013237F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BFF26BB29FA66B000FC9A7D /* MusicStore+Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MusicStore+Bundle.swift"; sourceTree = "<group>"; };
 		2BFF26C329FA68CF00FC9A7D /* URL+FileSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+FileSystem.swift"; sourceTree = "<group>"; };
@@ -92,6 +98,9 @@
 			isa = PBXGroup;
 			children = (
 				F312F2EA26A33B7400F51DBE /* MusicStore.swift */,
+				2BDBE7F92B3404C700FBB73C /* MusicStore+Play.swift */,
+				2BDBE7F72B34047D00FBB73C /* MusicStore+Remote.swift */,
+				2BDBE7F52B34047400FBB73C /* MusicStore+Local.swift */,
 				2BFF26BB29FA66B000FC9A7D /* MusicStore+Bundle.swift */,
 				2B84ED0B29FA2A2E00D291EB /* MusicInfoNode.swift */,
 			);
@@ -303,12 +312,15 @@
 				2BFF26C629FA68D800FC9A7D /* String+FileSystem.swift in Sources */,
 				F312F2E926A33A6900F51DBE /* MusicItem.swift in Sources */,
 				2BFF26CC29FA6C2700FC9A7D /* MusicItemDetail.swift in Sources */,
+				2BDBE7F62B34047400FBB73C /* MusicStore+Local.swift in Sources */,
 				F312F2EB26A33B7400F51DBE /* MusicStore.swift in Sources */,
 				2BFF26C829FA68F200FC9A7D /* Bundle+AppInfo.swift in Sources */,
 				2BFF26C429FA68CF00FC9A7D /* URL+FileSystem.swift in Sources */,
 				2BFF26BC29FA66B000FC9A7D /* MusicStore+Bundle.swift in Sources */,
 				F312F2E726A3383900F51DBE /* MusicList.swift in Sources */,
 				F312F2D726A3363800F51DBE /* OrzPlayerApp.swift in Sources */,
+				2BDBE7FA2B3404C700FBB73C /* MusicStore+Play.swift in Sources */,
+				2BDBE7F82B34047D00FBB73C /* MusicStore+Remote.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,7 +394,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -437,7 +449,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -464,7 +476,6 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -498,7 +509,6 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

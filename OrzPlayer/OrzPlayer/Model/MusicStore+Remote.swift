@@ -9,7 +9,7 @@ import Foundation
 
 extension MusicStore {
     
-    static let baseURL = URL(string: "http://10.95.241.20:8080")
+    static let baseURL = URL(string: "http://127.0.0.1:8080")
 
     func fetchKeyGenMusicList() async throws -> MusicInfoNode? {
         

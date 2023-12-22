@@ -18,6 +18,8 @@ final class MusicStore {
     var allMusics = [MusicInfoNode]()
     
     var selectedMusic: MusicInfoNode?
+
+    var isPlaying: Bool = false
 }
 
 extension MusicStore {

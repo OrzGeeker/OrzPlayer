@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct MusicList: View {
-    
+
     @Environment(MusicStore.self) var store
-    
+
     @State var outlineMode = false
-    
+
     @State private var iconRotateDegress: Double = 0
-    
+
     var body: some View {
         VStack {
             HStack {
@@ -31,6 +31,9 @@ struct MusicList: View {
                             value: iconRotateDegress
                         )
                         .padding([.trailing], 5)
+                        .onChange(of: store.isPlaying, { oldValue, newValue in
+                            iconRotateDegress = newValue ? 360 : 0
+                        })
                         .onAppear {
                             iconRotateDegress = 360
                         }
@@ -49,17 +52,7 @@ struct MusicList: View {
                                 disclosure: nil,
                                 active: store.selectedMusic?.id == item.id)
                             .onTapGesture {
-                                if item.downloaded {
-                                    store.playFileNode(item)
-                                } else {
-                                    Task {
-                                        do {
-                                            try await store.fetchPlayFile(with: item)
-                                        } catch {
-                                            
-                                        }
-                                    }
-                                }
+                                playItem(item)
                             }
                         }
                         .padding(.horizontal)
@@ -73,17 +66,7 @@ struct MusicList: View {
                             active: store.selectedMusic?.id == item.id)
                         .listRowSeparator(.hidden)
                         .onTapGesture {
-                            Task {
-                                if item.downloaded {
-                                    store.playFileNode(item)
-                                } else {
-                                    do {
-                                        try await store.fetchPlayFile(with: item)
-                                    } catch {
-                                        print(error.localizedDescription)
-                                    }
-                                }
-                            }
+                            playItem(item)
                         }
                     }
                     .listStyle(.plain)
@@ -112,6 +95,21 @@ struct MusicList: View {
                 try await store.loadRootNode()
             } catch {
                 print(error.localizedDescription)
+            }
+        }
+    }
+
+
+    func playItem(_ item: MusicInfoNode) {
+        Task {
+            if item.downloaded {
+                store.playFileNode(item)
+            } else {
+                do {
+                    try await store.fetchPlayFile(with: item)
+                } catch {
+                    print(error.localizedDescription)
+                }
             }
         }
     }

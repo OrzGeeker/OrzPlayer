@@ -7,25 +7,32 @@
 
 import Foundation
 
-struct MusicInfoNode: Codable, Hashable, Identifiable {
-        
+
+enum NodeType: String, Codable {
+    case directory
+    case file
+    case report
+}
+
+struct MusicInfoNode: Codable, Identifiable, Hashable {
+
     let type: NodeType
     
     let name: String?
-    
+
     var contents: [MusicInfoNode]?
-    
+
     var directories: Int?
-    
+
     var files: Int?
-    
+
     var playFilePath: String?
-    
+
     var bytes: Int64?
-    
+
     // MARK: Identifiable 实现不可以做成getter
     let id = UUID()
-    
+
     enum CodingKeys: String, CodingKey {
         case type
         case name
@@ -34,12 +41,6 @@ struct MusicInfoNode: Codable, Hashable, Identifiable {
         case files
         case playFilePath
         case bytes = "size"
-    }
-    
-    enum NodeType: String, Codable {
-        case directory
-        case file
-        case report
     }
 }
 

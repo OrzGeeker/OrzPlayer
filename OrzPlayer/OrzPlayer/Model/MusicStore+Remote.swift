@@ -10,7 +10,7 @@ import Foundation
 extension MusicStore {
     
     static let baseURL = URL(string: "http://10.95.241.20:8080")
-    
+
     func fetchKeyGenMusicList() async throws -> MusicInfoNode? {
         
         guard let requestURL = URL(string: "/musics/list", relativeTo: MusicStore.baseURL)
@@ -38,17 +38,20 @@ extension MusicStore {
         else {
             return false
         }
-        
+
         let (data, response) = try await URLSession.shared.data(from: requestURL)
         
         guard (response as? HTTPURLResponse)?.statusCode == 200
         else {
             return false
         }
-        
+
         let fileURL = URL(filePath: playFilePath)
+        if !FileManager.default.fileExists(atPath: playFilePath) {
+            try FileManager.default.createDirectory(at: fileURL.deletingLastPathComponent(), withIntermediateDirectories: true)
+        }
         try data.write(to: fileURL, options: .atomic)
-        
+
         return true
     }
 }

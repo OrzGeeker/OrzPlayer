@@ -68,7 +68,7 @@ extension MusicStore {
                 
                 let newFilePath = filePath.appendingPathComponent(item)
                 
-                var nodeType: MusicInfoNode.NodeType = .directory
+                var nodeType: NodeType = .directory
                 
                 if newFilePath.isDirPath {
                     parentDirCount += 1

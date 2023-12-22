@@ -54,7 +54,7 @@ struct MusicList: View {
                                 } else {
                                     Task {
                                         do {
-                                            let ret = try await store.fetchPlayFile(with: item)
+                                            try await store.fetchPlayFile(with: item)
                                         } catch {
                                             
                                         }
@@ -77,7 +77,11 @@ struct MusicList: View {
                                 if item.downloaded {
                                     store.playFileNode(item)
                                 } else {
-                                   try await store.fetchPlayFile(with: item)
+                                    do {
+                                        try await store.fetchPlayFile(with: item)
+                                    } catch {
+                                        print(error.localizedDescription)
+                                    }
                                 }
                             }
                         }

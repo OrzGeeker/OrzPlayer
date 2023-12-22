@@ -73,8 +73,13 @@ struct MusicList: View {
                             active: store.selectedMusic?.id == item.id)
                         .listRowSeparator(.hidden)
                         .onTapGesture {
-                            
-                            store.playFileNode(item)
+                            Task {
+                                if item.downloaded {
+                                    store.playFileNode(item)
+                                } else {
+                                   try await store.fetchPlayFile(with: item)
+                                }
+                            }
                         }
                     }
                     .listStyle(.plain)

@@ -23,19 +23,7 @@
 		F312F2E926A33A6900F51DBE /* MusicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F312F2E826A33A6900F51DBE /* MusicItem.swift */; };
 		F312F2EB26A33B7400F51DBE /* MusicStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F312F2EA26A33B7400F51DBE /* MusicStore.swift */; };
 		F320E71A29E873290057ED52 /* FModAPI in Frameworks */ = {isa = PBXBuildFile; productRef = F320E71929E873290057ED52 /* FModAPI */; };
-		F33A70B62A75448B00F14566 /* KeyGenMusic in Resources */ = {isa = PBXBuildFile; fileRef = F33A70B52A75448B00F14566 /* KeyGenMusic */; };
-		F375B2062A74EE5000486836 /* OrzMusicBundle.bundle in Embed PlugIns */ = {isa = PBXBuildFile; fileRef = F37586CB2A74C8AC00486836 /* OrzMusicBundle.bundle */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		F375B2072A74EE5000486836 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F312F2CB26A3363800F51DBE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F37586CA2A74C8AC00486836;
-			remoteInfo = OrzMusicBundle;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		F375B2092A74EE5100486836 /* Embed PlugIns */ = {
@@ -44,7 +32,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				F375B2062A74EE5000486836 /* OrzMusicBundle.bundle in Embed PlugIns */,
 			);
 			name = "Embed PlugIns";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,10 +56,6 @@
 		F312F2E626A3383900F51DBE /* MusicList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicList.swift; sourceTree = "<group>"; };
 		F312F2E826A33A6900F51DBE /* MusicItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicItem.swift; sourceTree = "<group>"; };
 		F312F2EA26A33B7400F51DBE /* MusicStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicStore.swift; sourceTree = "<group>"; };
-		F33A70B52A75448B00F14566 /* KeyGenMusic */ = {isa = PBXFileReference; lastKnownFileType = folder; path = KeyGenMusic; sourceTree = "<group>"; };
-		F33A70B82A754DF600F14566 /* gen_music_json.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = gen_music_json.sh; sourceTree = "<group>"; };
-		F36039A32A76598E00A989BC /* OrzMusicBundle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OrzMusicBundle-Info.plist"; sourceTree = "<group>"; };
-		F37586CB2A74C8AC00486836 /* OrzMusicBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrzMusicBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,13 +64,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F320E71A29E873290057ED52 /* FModAPI in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F37586C82A74C8AC00486836 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				F312F2D526A3363800F51DBE /* OrzPlayer */,
-				F36039A42A7659EE00A989BC /* OrzMusicBundle */,
 				F375B2052A74EE5000486836 /* Frameworks */,
 				F312F2D426A3363800F51DBE /* Products */,
 			);
@@ -158,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				F312F2D326A3363800F51DBE /* OrzPlayer.app */,
-				F37586CB2A74C8AC00486836 /* OrzMusicBundle.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -184,16 +158,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		F36039A42A7659EE00A989BC /* OrzMusicBundle */ = {
-			isa = PBXGroup;
-			children = (
-				F33A70B82A754DF600F14566 /* gen_music_json.sh */,
-				F33A70B52A75448B00F14566 /* KeyGenMusic */,
-				F36039A32A76598E00A989BC /* OrzMusicBundle-Info.plist */,
-			);
-			path = OrzMusicBundle;
-			sourceTree = "<group>";
-		};
 		F375B2052A74EE5000486836 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,7 +180,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				F375B2082A74EE5000486836 /* PBXTargetDependency */,
 			);
 			name = OrzPlayer;
 			packageProductDependencies = (
@@ -225,23 +188,6 @@
 			productName = OrzPlayer;
 			productReference = F312F2D326A3363800F51DBE /* OrzPlayer.app */;
 			productType = "com.apple.product-type.application";
-		};
-		F37586CA2A74C8AC00486836 /* OrzMusicBundle */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F37586CC2A74C8AC00486836 /* Build configuration list for PBXNativeTarget "OrzMusicBundle" */;
-			buildPhases = (
-				F37586C72A74C8AC00486836 /* Sources */,
-				F37586C82A74C8AC00486836 /* Frameworks */,
-				F37586C92A74C8AC00486836 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = OrzMusicBundle;
-			productName = OrzMusicBundle;
-			productReference = F37586CB2A74C8AC00486836 /* OrzMusicBundle.bundle */;
-			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -255,9 +201,6 @@
 				TargetAttributes = {
 					F312F2D226A3363800F51DBE = {
 						CreatedOnToolsVersion = 13.0;
-					};
-					F37586CA2A74C8AC00486836 = {
-						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
@@ -278,7 +221,6 @@
 			projectRoot = "";
 			targets = (
 				F312F2D226A3363800F51DBE /* OrzPlayer */,
-				F37586CA2A74C8AC00486836 /* OrzMusicBundle */,
 			);
 		};
 /* End PBXProject section */
@@ -290,14 +232,6 @@
 			files = (
 				F312F2DE26A3363900F51DBE /* Preview Assets.xcassets in Resources */,
 				F312F2DB26A3363900F51DBE /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F37586C92A74C8AC00486836 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F33A70B62A75448B00F14566 /* KeyGenMusic in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,23 +258,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F37586C72A74C8AC00486836 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		F375B2082A74EE5000486836 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			platformFilter = ios;
-			target = F37586CA2A74C8AC00486836 /* OrzMusicBundle */;
-			targetProxy = F375B2072A74EE5000486836 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F312F2DF26A3363900F51DBE /* Debug */ = {
@@ -484,12 +402,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.joker.OrzPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = "1,2,3,7";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -518,62 +436,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.joker.OrzPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = "1,2,3,7";
-			};
-			name = Release;
-		};
-		F37586CD2A74C8AC00486836 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2N62934Y28;
-				EXECUTABLE_NAME = "";
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "OrzMusicBundle/OrzMusicBundle-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos*]" = 16.0;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.joker.OrzMusicBundle;
-				PRODUCT_BUNDLE_PACKAGE_TYPE = BDNL;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		F37586CE2A74C8AC00486836 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2N62934Y28;
-				EXECUTABLE_NAME = "";
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "OrzMusicBundle/OrzMusicBundle-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=iphoneos*]" = 16.0;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.joker.OrzMusicBundle;
-				PRODUCT_BUNDLE_PACKAGE_TYPE = BDNL;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -594,15 +462,6 @@
 			buildConfigurations = (
 				F312F2E226A3363900F51DBE /* Debug */,
 				F312F2E326A3363900F51DBE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F37586CC2A74C8AC00486836 /* Build configuration list for PBXNativeTarget "OrzMusicBundle" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F37586CD2A74C8AC00486836 /* Debug */,
-				F37586CE2A74C8AC00486836 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

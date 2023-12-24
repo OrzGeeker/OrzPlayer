@@ -75,7 +75,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "YES"
-      customWorkingDirectory = "/Users/bytedance/Documents/me/OrzPlayer/Service"
+      customWorkingDirectory = "/Users/joker/Documents/OrzPlayer/Service"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"

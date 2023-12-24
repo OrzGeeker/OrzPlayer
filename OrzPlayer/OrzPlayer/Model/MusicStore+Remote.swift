@@ -28,7 +28,7 @@ extension MusicStore {
         let root = try JSONDecoder().decode([MusicInfoNode].self, from: data).first
         return root
     }
-    
+    	
     @discardableResult
     func fetchPlayFile(with node: MusicInfoNode) async throws -> Bool {
         

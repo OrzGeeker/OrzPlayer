@@ -24,7 +24,7 @@
 		F312F2EB26A33B7400F51DBE /* MusicStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F312F2EA26A33B7400F51DBE /* MusicStore.swift */; };
 		F320E71A29E873290057ED52 /* FModAPI in Frameworks */ = {isa = PBXBuildFile; productRef = F320E71929E873290057ED52 /* FModAPI */; };
 		F33A70B62A75448B00F14566 /* KeyGenMusic in Resources */ = {isa = PBXBuildFile; fileRef = F33A70B52A75448B00F14566 /* KeyGenMusic */; };
-		F375B2062A74EE5000486836 /* OrzMusicBundle.bundle in Embed PlugIns */ = {isa = PBXBuildFile; fileRef = F37586CB2A74C8AC00486836 /* OrzMusicBundle.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F375B2062A74EE5000486836 /* OrzMusicBundle.bundle in Embed PlugIns */ = {isa = PBXBuildFile; fileRef = F37586CB2A74C8AC00486836 /* OrzMusicBundle.bundle */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -336,6 +336,7 @@
 /* Begin PBXTargetDependency section */
 		F375B2082A74EE5000486836 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = F37586CA2A74C8AC00486836 /* OrzMusicBundle */;
 			targetProxy = F375B2072A74EE5000486836 /* PBXContainerItemProxy */;
 		};
@@ -483,11 +484,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.joker.OrzPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3,7";
 			};
 			name = Debug;
 		};
@@ -516,11 +518,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.joker.OrzPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3,7";
 			};
 			name = Release;
 		};

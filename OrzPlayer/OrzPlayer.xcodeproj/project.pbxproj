@@ -14,12 +14,12 @@
 		2BFF26BC29FA66B000FC9A7D /* MusicStore+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF26BB29FA66B000FC9A7D /* MusicStore+Bundle.swift */; };
 		2BFF26C429FA68CF00FC9A7D /* URL+FileSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF26C329FA68CF00FC9A7D /* URL+FileSystem.swift */; };
 		2BFF26C629FA68D800FC9A7D /* String+FileSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF26C529FA68D800FC9A7D /* String+FileSystem.swift */; };
-		2BFF26C829FA68F200FC9A7D /* Bundle+AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF26C729FA68F200FC9A7D /* Bundle+AppInfo.swift */; };
+		2BFF26C829FA68F200FC9A7D /* Bundle+AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF26C729FA68F200FC9A7D /* Bundle+AppInfo.swift */; platformFilter = ios; };
 		2BFF26CC29FA6C2700FC9A7D /* MusicItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF26CB29FA6C2700FC9A7D /* MusicItemDetail.swift */; };
 		F312F2D726A3363800F51DBE /* OrzPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F312F2D626A3363800F51DBE /* OrzPlayerApp.swift */; };
 		F312F2DB26A3363900F51DBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F312F2DA26A3363900F51DBE /* Assets.xcassets */; };
 		F312F2DE26A3363900F51DBE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F312F2DD26A3363900F51DBE /* Preview Assets.xcassets */; };
-		F312F2E726A3383900F51DBE /* MusicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F312F2E626A3383900F51DBE /* MusicList.swift */; };
+		F312F2E726A3383900F51DBE /* MusicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F312F2E626A3383900F51DBE /* MusicList.swift */; platformFilter = ios; };
 		F312F2E926A33A6900F51DBE /* MusicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F312F2E826A33A6900F51DBE /* MusicItem.swift */; };
 		F312F2EB26A33B7400F51DBE /* MusicStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F312F2EA26A33B7400F51DBE /* MusicStore.swift */; };
 		F320E71A29E873290057ED52 /* FModAPI in Frameworks */ = {isa = PBXBuildFile; productRef = F320E71929E873290057ED52 /* FModAPI */; };
@@ -474,7 +474,7 @@
 			repositoryURL = "https://github.com/OrzGeeker/OrzFMod.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.1;
+				minimumVersion = 0.0.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

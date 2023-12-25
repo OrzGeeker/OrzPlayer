@@ -86,8 +86,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/OrzGeeker/OrzFMod.git",
       "state" : {
-        "revision" : "ae5f42799294c7bb886f02516dae787b793e488b",
-        "version" : "0.0.1"
+        "revision" : "d4e8ed78ee9e07d203a155652d49468254f606c1",
+        "version" : "0.0.2"
       }
     },
     {

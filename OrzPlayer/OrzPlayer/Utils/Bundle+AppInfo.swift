@@ -6,7 +6,15 @@
 //
 
 import Foundation
+import SwiftUI
+
+#if canImport(AppKit)
+import AppKit
+#endif
+
+#if canImport(UIKit)
 import UIKit
+#endif
 
 extension Bundle {
     
@@ -17,16 +25,34 @@ extension Bundle {
         return bundleName
     }()
     
-    static let appIcon: UIImage? = {
+    static let appIconName: String? = {
         guard let bundleIconsDictionary = Bundle.main.infoDictionary?["CFBundleIcons"] as? [String: Any],
               let primaryIconsDictionary = bundleIconsDictionary["CFBundlePrimaryIcon"] as? [String: Any],
               let iconFiles = primaryIconsDictionary["CFBundleIconFiles"] as? [Any],
-              let lastIcon = iconFiles.last as? String,
-              let iconImage = UIImage(named: lastIcon)
+              let lastIconName = iconFiles.last as? String
         else {
             return nil
         }
-        return iconImage
+        return lastIconName
     }()
 
+    static let appIconImage: Image? = {
+        guard let appIconName
+        else {
+            return nil
+        }
+
+#if canImport(AppKit)
+        if let nsImage = NSImage(named: appIconName) {
+            return Image(nsImage: nsImage)
+        }
+#elseif canImport(UIKit)
+        if let uiImage = UIImage(named: appIconName) {
+            return Image(uiImage: uiImage)
+        }
+#else
+
+#endif
+        return nil
+    }()
 }

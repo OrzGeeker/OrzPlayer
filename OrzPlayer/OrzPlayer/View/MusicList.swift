@@ -18,8 +18,8 @@ struct MusicList: View {
     var body: some View {
         VStack {
             HStack {
-                if let uiIconImage = Bundle.appIcon {
-                    Image(uiImage: uiIconImage)
+                if let appIconImage = Bundle.appIconImage {
+                    appIconImage
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 40)

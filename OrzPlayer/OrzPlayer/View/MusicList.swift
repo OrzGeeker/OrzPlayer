@@ -18,26 +18,24 @@ struct MusicList: View {
     var body: some View {
         VStack {
             HStack {
-                if let appIconImage = Bundle.appIconImage {
-                    appIconImage
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 40)
-                        .cornerRadius(20)
-                        .rotationEffect(.degrees(iconRotateDegress))
-                        .animation(
-                            .linear(duration: 5)
-                            .repeatForever(autoreverses: false),
-                            value: iconRotateDegress
-                        )
-                        .padding([.trailing], 5)
-                        .onChange(of: store.isPlaying, { oldValue, newValue in
-                            iconRotateDegress = newValue ? 360 : 0
-                        })
-                        .onAppear {
-                            iconRotateDegress = 360
-                        }
-                }
+                Image("disk")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 40)
+                    .cornerRadius(20)
+                    .rotationEffect(.degrees(iconRotateDegress))
+                    .animation(
+                        .linear(duration: 5)
+                        .repeatForever(autoreverses: false),
+                        value: iconRotateDegress
+                    )
+                    .padding([.trailing], 5)
+                    .onChange(of: store.isPlaying, { oldValue, newValue in
+                        iconRotateDegress = newValue ? 360 : 0
+                    })
+                    .onAppear {
+                        iconRotateDegress = 360
+                    }
                 Text(Bundle.appName)
                     .bold()
                     .font(.largeTitle)
